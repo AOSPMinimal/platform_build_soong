@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"stormbreaker/soong/android"
+	"aosp/soong/android"
 
 	"github.com/google/blueprint/proptools"
 )
@@ -134,8 +134,8 @@ type variableProperties struct {
 			Exclude_srcs []string `android:"arch_variant"`
 		} `android:"arch_variant"`
 	} `android:"arch_variant"`
-	// include stormbreaker variables
-	Stormbreaker android.Product_variables
+	// include aosp variables
+	Aosp android.Product_variables
 }
 
 var defaultProductVariables interface{} = variableProperties{}
@@ -341,8 +341,8 @@ type productVariables struct {
 
 	BoardUsesRecoveryAsBoot *bool `json:",omitempty"`
 
-	// include stormbreaker variables
-	Stormbreaker android.ProductVariables
+	// include aosp variables
+	Aosp android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
