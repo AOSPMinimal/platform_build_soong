@@ -1,0 +1,25 @@
+From cd6f961d3b862c7daf8957db9116febc6c362f37 Mon Sep 17 00:00:00 2001
+From: Danny Lin <danny@kdrag0n.dev>
+Date: Wed, 7 Apr 2021 16:03:51 -0700
+Subject: [PATCH] [master] Disable compound-token-split-by-macro warning
+
+hardware/qcom/camera/msm8998/QCamera2 generates too many of these
+warnings, and we don't care about fixing them for a legacy device.
+
+Change-Id: I288cdbf3cef027c9e50bbe01565a9ef6ebb6bd4b
+---
+ cc/config/clang.go | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/cc/config/clang.go b/cc/config/clang.go
+index 9068b895..20541a1e 100644
+--- a/cc/config/clang.go
++++ b/cc/config/clang.go
+@@ -151,6 +151,7 @@ func init() {
+ 
+ 		// Warnings from clang-12
+ 		"-Wno-gnu-folding-constant",
++		"-Wno-compound-token-split-by-macro",
+ 	}, " "))
+ 
+ 	pctx.StaticVariable("ClangExtraCppflags", strings.Join([]string{

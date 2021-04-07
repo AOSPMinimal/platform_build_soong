@@ -1,0 +1,26 @@
+From 2bb2c3885b1b95603b95e8ffca70dbd30a1127ff Mon Sep 17 00:00:00 2001
+From: Thespartann <danilastefan69@yahoo.ro>
+Date: Sun, 3 Nov 2019 15:17:48 +0000
+Subject: [PATCH] soong: Whitelist perl
+
+* Fixes perl is not allowed to be used and some other perl warnings
+See https://android.googlesource.com/platform/build/+/master/Changes.md#PATH_Tools for more information.
+
+Signed-off-by: Thespartann <danilastefan69@yahoo.ro>
+Signed-off-by: Joey Huab <joey@evolution-x.org>
+---
+ ui/build/paths/config.go | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/ui/build/paths/config.go b/ui/build/paths/config.go
+index 81c500d2b..8b34c2518 100644
+--- a/ui/build/paths/config.go
++++ b/ui/build/paths/config.go
+@@ -88,6 +88,7 @@ var Configuration = map[string]PathConfig{
+ 	"javap":   Allowed,
+ 	"lsof":    Allowed,
+ 	"openssl": Allowed,
++	"perl":     Allowed,
+ 	"pstree":  Allowed,
+ 	"rsync":   Allowed,
+ 	"sh":      Allowed,
